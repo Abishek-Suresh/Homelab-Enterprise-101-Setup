@@ -55,6 +55,21 @@ A dedicated NAT Network with IP Range 10.0.0.0/24 is configured to all our virtu
 
 <br>
 
-### LATERAL MOVEMENT AND PRIVELEGE ESCALATION:
+### LATERAL MOVEMENT AND PRIVILEGE ESCALATION:
+- Getting the credentials from jane, now as an attacker we can laterally move from email svr workstation into the linux workstation.
+- Further gathering the information and performing Nmap scan, we can see that the windows client is up and running with the open ports 5985 and 5986 belonging to the WinRM
+- Leveraging <b>NetExec</b>, a powerful tool which can be used to compromise services like SMB,SSH etc, even WinRM included. Like HYDRA, NetExec takes a list of users and passwords. Access to the windows client is gained using this tool as well as Evil-WinRM, an opensource, command- line tool that provides remote shell access to windows machines over WinRM.
+- After getting the access to this machine, we can then try to pivot to the domain controller. Using nmap we found out that RDP port is open. Leveraging <b>Xfreerdp</b>, a free implementation of RDP, which can be run on the command-line and comes pre-installed in kali linux, a connection is established.
+
+<br>
+
+### DATA EXFILTERATION:
+- The 'secrets.txt' file is exported to the attacker's machine using scp successfully performing the data exfiltration.
+<br>
+
+### PERSISTENCE:
+- Creating a local account in Domain controller and adding it to the administrators group will provide us privileged access.
+- Implementation of a reverse shell, or even deploying the KEYLOGGER project that you can find in my other repository creates a persistent backdoor or eavsdrop.
+- A scheduled task is created that runs a poweshell script daily at 12'O clock.
 
 
