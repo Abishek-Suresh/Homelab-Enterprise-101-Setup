@@ -71,6 +71,7 @@ A dedicated NAT Network with IP Range 10.0.0.0/24 is configured to all our virtu
 - Creating a local account in Domain controller and adding it to the administrators group will provide us privileged access.
 - Implementation of a reverse shell, or even deploying the KEYLOGGER project that you can find in my other repository creates a persistent backdoor or eavsdrop.
 - A scheduled task is created that runs a poweshell script daily at 12'O clock.
+<br>
 
 ### CONCLUSION:
 - The Project-X Home Lab provides a comprehensive environment for understanding both the offensive and defensive aspects of cybersecurity. By simulating real-world infrastructure—complete with Active Directory, Linux and Windows clients, a mail server, and security monitoring systems like Wazuh and Security Onion—this lab bridges the gap between theoretical knowledge and hands-on experience. Thanks to project security for this one.
