@@ -32,6 +32,10 @@ A dedicated NAT Network with IP Range 10.0.0.0/24 is configured to all our virtu
 <br><br>
 
 # SIMULATING END-TO-END CYBER ATTACK
+<br>
+
+![Image](https://github.com/user-attachments/assets/f06fd72f-7b06-4479-a3e8-dd9116036fdc)
+<br>
 
 ### CONFIGURING VULNERABALITIES IN OUR ENVIRONMENT:
 - SSH is enabled and the sshd config files are configured in such a way that we allow root login access with a password authentication in both email server as well as our linux client.
