@@ -38,12 +38,23 @@ A dedicated NAT Network with IP Range 10.0.0.0/24 is configured to all our virtu
 - WinRM (Windows Remote Management) is configured on our windows client.
 - RDP (Remote Desktop Protocol) is enabled on our domain controller machine.
 
+<br>
+
 ### CONFIGURING DETECTION ALERTS IN SECURITY BOX (WAZUH):
 - In Wazuh, we have configured three agents, windows client, linux client and our domain controller.
 - Navigating to the alerting tab, we have created three monitors to monitor failed SSH login attempts, WinRM login and FIM(File Integrity Management) Integration respectively. Adding syscheck rule to local_rules.xml file helps us to monitor the 'secrets.txt' file.
+
+<br>
 
 ### RECONNAISSANCE PHASE:
 
 - Leveraging NMAP, we can scan our network and look for devices and open ports in the current network. After identifying the running hosts, a brute force attempt for an SSH open port is carried out using HYDRA. This brute force is carried out using rockyou.txt wordlist which is already available in Kali linux.
 - After cracking the password, connection to the email server is made via SSH and further more information about the system is gathered.
-- 
+- Finding about the email-svr user, we navigate into that user in the email-svr and janed@corp.project-x-dc.com is found in the mail directory.
+- As an attacker, we are going to set up a spear-phishing email website impersonating a password verification website in order for us to grab the credentials from jane so that we can access the linux client via ssh. Sending an email to this user, impersonating the email server (trusted domain), this is a possible thing.
+
+<br>
+
+### LATERAL MOVEMENT AND PRIVELEGE ESCALATION:
+
+
